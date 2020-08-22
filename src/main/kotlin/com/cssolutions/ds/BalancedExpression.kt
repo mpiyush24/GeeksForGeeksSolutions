@@ -11,6 +11,9 @@ class BalancedExpression {
             if (expr[i] == '(' || expr[i] == '{' || expr[i] == '[') {
                 s.push(expr[i])
             } else if (expr[i] == ')' || expr[i] == '}' || expr[i] == ']') {
+                if(s.isEmpty()) {
+                    break
+                }
                 val q = expr[i]
                 val p = s.peek() as Char
                 if (p == '(' && q != ')' || p == '{' && q != '}' || p == '[' && q != ']') {

@@ -10,4 +10,9 @@ internal class BalancedExpressionTest {
     fun baseCase() {
         assertTrue(BalancedExpression().execute("{{{{{{{{{{{{{[{}]}}}}}}}}}}}}}"))
     }
+
+    @Test
+    fun baseCase1() {
+        assertTrue(BalancedExpression().execute("{}()[]"))
+    }
 }
